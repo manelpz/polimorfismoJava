@@ -2,70 +2,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 // 🔹 Interfaz común (contrato)
-interface MedioComunicacion {
+interface canalComunicacion {
     void enviarMensaje(String destinatario, String mensaje);
 }
 
 // 🔸 Implementación: WhatsApp
-class WhatsApp implements MedioComunicacion {
+class WhatsApp implements canalComunicacion {
     @Override
     public void enviarMensaje(String destinatario, String mensaje) {
         System.out.println("📱 Enviando WhatsApp a " + destinatario + ": \"" + mensaje + "\"");
     }
 }
 
-// 🔸 Implementación: SMS
-class SMS implements MedioComunicacion {
-    @Override
-    public void enviarMensaje(String destinatario, String mensaje) {
-        System.out.println("📩 Enviando SMS a " + destinatario + ": \"" + mensaje + "\"");
-    }
-}
+// TODO: implementación: SMS
 
-// 🔸 Implementación: Chat IA
-class ChatIA implements MedioComunicacion {
-    @Override
-    public void enviarMensaje(String destinatario, String mensaje) {
-        System.out.println("🤖 Chat IA responde a " + destinatario + ": \"" + generarRespuesta(mensaje) + "\"");
-    }
 
-    private String generarRespuesta(String mensaje) {
-        // Simulación de una respuesta automática
-        return "Recibí tu mensaje \"" + mensaje + "\" y estoy analizando tu intención...";
-    }
-}
+// TODO: implementación: Chat IA
 
-// 🔸 Implementación: Email
-class Email implements MedioComunicacion {
-    @Override
-    public void enviarMensaje(String destinatario, String mensaje) {
-        System.out.println("📧 Enviando Email a " + destinatario + ": \"" + mensaje + "\"");
-    }
-}
 
-// 🔸 Implementación adicional: Notificación Push
-class NotificacionPush implements MedioComunicacion {
-    @Override
-    public void enviarMensaje(String destinatario, String mensaje) {
-        System.out.println("🔔 Enviando notificación push a " + destinatario + ": \"" + mensaje + "\"");
-    }
-}
+// TODO: implementación: Email
+
+
+// TODO: implementación adicional: Notificación Push
+
 
 // 🔹 Clase principal que usa polimorfismo
 public class Main {
     public static void main(String[] args) {
-        List<MedioComunicacion> medios = new ArrayList<>();
+        List<canalComunicacion> medios = new ArrayList<>();
 
         // Agregamos diferentes medios de comunicación
         medios.add(new WhatsApp());
-        medios.add(new SMS());
-        medios.add(new ChatIA());
-        medios.add(new Email());
-        medios.add(new NotificacionPush());
+        //medios.add(new SMS());
+        //medios.add(new ChatIA());
+        //medios.add(new Email());
+        //medios.add(new NotificacionPush());
 
         // Simulamos enviar un mensaje por cada medio
-        for (MedioComunicacion medio : medios) {
-            medio.enviarMensaje("Emmanuel", "Hola, ¿cómo estás?");
-        }
+
+        canalComunicacion WhatsAppObjeto = medios.get(0);
+        WhatsAppObjeto.enviarMensaje("44 31 71 08 10", "Gracias por tu compra!");
+
+        //TODO: simula el envio por email, pusj notificacion, y sms
     }
 }
+
