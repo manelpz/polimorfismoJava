@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// interfaz común (contrato)
+// interfaz común 
 interface canalComunicacion {
     void enviarMensaje(String destinatario, String mensaje);
 }
