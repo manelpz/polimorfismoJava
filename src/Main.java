@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// 🔹 Interfaz común (contrato)
+// Interfaz común (contrato)
 interface canalComunicacion {
     void enviarMensaje(String destinatario, String mensaje);
 }
 
-// 🔸 Implementación: WhatsApp
+// Implementación: WhatsApp
 class WhatsApp implements canalComunicacion {
     @Override
     public void enviarMensaje(String destinatario, String mensaje) {
@@ -26,7 +26,7 @@ class WhatsApp implements canalComunicacion {
 // TODO: implementación adicional: Notificación Push
 
 
-// 🔹 Clase principal que usa polimorfismo
+// Clase principal que usa polimorfismo
 public class Main {
     public static void main(String[] args) {
         List<canalComunicacion> medios = new ArrayList<>();
@@ -41,7 +41,7 @@ public class Main {
         // Simulamos enviar un mensaje por cada medio
 
         canalComunicacion WhatsAppObjeto = medios.get(0);
-        WhatsAppObjeto.enviarMensaje("44 31 71 08 10", "Gracias por tu compra!");
+        WhatsAppObjeto.enviarMensaje("44 31 71 08 10", "Gracias por tu compra emma!");
 
         //TODO: simula el envio por email, pusj notificacion, y sms
     }
